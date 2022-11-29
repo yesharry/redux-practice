@@ -1,5 +1,7 @@
 let initialState = {
   count: 0,
+  id: "",
+  password: "",
 };
 
 function reducer(state = initialState, action) {
@@ -27,9 +29,15 @@ function reducer(state = initialState, action) {
   switch (action.type) {
     // switch문도 쓸 수 있다.
     case "INCREMENT":
-      return { ...state, count: state.count + 1 };
+      return { ...state, count: state.count + action.payload.num };
     case "DECREMENT":
       return { ...state, count: state.count - 1 };
+    case "LOGIN":
+      return {
+        ...state,
+        id: action.payload.id,
+        password: action.payload.password,
+      };
     default:
       return { ...state };
   }
