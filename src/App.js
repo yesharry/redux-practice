@@ -1,5 +1,6 @@
 // import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Box from "./components/Box";
 import "./App.css";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <h1>{count}</h1>
       <button onClick={increase}>+</button>
       <button onClick={decrease}>-</button>
+      <Box />
     </div>
   );
 }
